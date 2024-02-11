@@ -9,7 +9,7 @@ export const Heroes = (props: Props) => {
         <div className="relative h-[300px] w-[300px] sm:h-[350px] sm:w-[350px] md:h-[400px] md:w-[400px]">
           <Image src={"/pic1.png"} fill className="object-contain" alt="" />
         </div>
-        <div className="relative h-[400px] w-[400px]">
+        <div className="relative hidden h-[400px] w-[400px] md:block">
           <Image src={"/pic2.jpg"} fill className="object-contain" alt="" />
         </div>
       </div>
