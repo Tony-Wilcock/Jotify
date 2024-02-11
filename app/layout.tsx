@@ -1,12 +1,19 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { inter } from "@/public/fonts";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import { AppDescription, AppName } from "@/public/constants";
 
 export const metadata: Metadata = {
-  title: "Notion Clone",
-  description: "A clone of the popular work/note taking application",
+  title: `${AppName}`,
+  description: `${AppDescription}`,
+  icons: {
+    icon: [
+      {
+        url: "/logo.png",
+        href: "/logo.png",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
