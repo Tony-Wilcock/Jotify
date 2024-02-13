@@ -8,7 +8,7 @@ type Props = {};
 
 export const Logo = (props: Props) => {
   return (
-    <div className="hidden items-center gap-x-2 md:flex">
+    <div className="flex items-center gap-x-2">
       <Image src={"/logo.png"} width={"40"} height={"40"} alt="Logo" />
       <p className={cn("select-none font-semibold", poppins.className)}>
         {AppName}

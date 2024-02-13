@@ -10,7 +10,7 @@ export const Heroes = (props: Props) => {
           <Image src={"/pic1.png"} fill className="object-contain" alt="" />
         </div>
         <div className="relative hidden h-[400px] w-[400px] md:block">
-          <Image src={"/pic2.jpg"} fill className="object-contain" alt="" />
+          <Image src={"/pic1.png"} fill className="object-contain" alt="" />
         </div>
       </div>
     </div>
