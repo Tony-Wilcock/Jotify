@@ -5,9 +5,11 @@ import { cn } from "@/lib/utils";
 import { Logo } from "./logo";
 import { ModeToggle } from "@/components/mode-toggle";
 import { useConvexAuth } from "convex/react";
-import { SignInButton } from "@clerk/clerk-react";
+import { SignInButton, UserButton } from "@clerk/clerk-react";
 import { Button } from "@/components/ui/button";
 import { AppName } from "@/public/constants";
+import { Spinner } from "@/components/spinner";
+import Link from "next/link";
 
 export const Navbar = () => {
   const { isAuthenticated, isLoading } = useConvexAuth();
@@ -22,7 +24,7 @@ export const Navbar = () => {
     >
       <Logo />
       <div className="flex w-full items-center justify-between gap-x-2 md:ml-auto md:justify-end">
-        {isLoading && <p>Loading...</p>}
+        {isLoading && <Spinner />}
         {!isAuthenticated && !isLoading && (
           <>
             <SignInButton mode="modal">
@@ -34,6 +36,14 @@ export const Navbar = () => {
             <SignInButton mode="modal">
               <Button size={"sm"}>Get {AppName} free.</Button>
             </SignInButton>
+          </>
+        )}
+        {isAuthenticated && !isLoading && (
+          <>
+            <Button variant={"ghost"} size={"sm"} asChild>
+              <Link href={"/documents"}>Enter {AppName}</Link>
+            </Button>
+            <UserButton afterSignOutUrl="/" />
           </>
         )}
         <ModeToggle />
