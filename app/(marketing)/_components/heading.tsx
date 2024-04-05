@@ -8,9 +8,7 @@ import { useConvexAuth } from "convex/react";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
-type Props = {};
-
-export const Heading = (props: Props) => {
+export const Heading = () => {
   const { isAuthenticated, isLoading } = useConvexAuth();
 
   return (
