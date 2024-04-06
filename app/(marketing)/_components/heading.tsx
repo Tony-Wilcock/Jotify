@@ -11,6 +11,8 @@ import Link from "next/link";
 export const Heading = () => {
   const { isAuthenticated, isLoading } = useConvexAuth();
 
+  console.log(`Authenticated = ${isAuthenticated}`);
+
   return (
     <div className="max-w-3xl space-y-4">
       <h1 className="text-3xl font-bold sm:text-5xl md:text-6xl">

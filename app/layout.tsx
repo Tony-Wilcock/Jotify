@@ -5,6 +5,7 @@ import "./globals.css";
 import { AppDescription, AppName } from "@/public/constants";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { ConvexClientProvider } from "@/components/providers/convex-provider";
+import { ModalProvider } from "@/components/providers/modal-provider";
 
 export const metadata: Metadata = {
   title: `${AppName}`,
@@ -36,6 +37,7 @@ export default function RootLayout({
             storageKey="Name-Theme"
           >
             <Toaster position="bottom-center" />
+            <ModalProvider />
             {children}
           </ThemeProvider>
         </ConvexClientProvider>
