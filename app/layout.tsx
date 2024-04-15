@@ -7,6 +7,7 @@ import { ThemeProvider } from "@/components/providers/theme-provider";
 import { ConvexClientProvider } from "@/components/providers/convex-provider";
 import { ModalProvider } from "@/components/providers/modal-provider";
 import { EdgeStoreProvider } from "@/lib/edgestore";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: `${AppName}`,
@@ -28,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={cn(`${inter.className} dark:bg-[#1f1f1f]`)}>
         <ConvexClientProvider>
           <EdgeStoreProvider>
             <ThemeProvider
